@@ -18,7 +18,7 @@
 		940556CE29008BF000EBD990 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556CD29008BF000EBD990 /* APIService.swift */; };
 		940556D129008E5C00EBD990 /* JsonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D029008E5C00EBD990 /* JsonProtocol.swift */; };
 		940556D42900A03D00EBD990 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D32900A03D00EBD990 /* CustomButton.swift */; };
-		940556D62900D58300EBD990 /* CollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D52900D58300EBD990 /* CollectionAdapter.swift */; };
+		940556D62900D58300EBD990 /* CollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D52900D58300EBD990 /* CollectionViewAdapter.swift */; };
 		940556D92900E1A800EBD990 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D82900E1A800EBD990 /* SecondViewController.swift */; };
 		940556DD2900E72E00EBD990 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556DC2900E72E00EBD990 /* ImageCell.swift */; };
 		940556DF2900E81800EBD990 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940556DE2900E81800EBD990 /* ImageCell.xib */; };
@@ -69,7 +69,7 @@
 		940556CD29008BF000EBD990 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		940556D029008E5C00EBD990 /* JsonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonProtocol.swift; sourceTree = "<group>"; };
 		940556D32900A03D00EBD990 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		940556D52900D58300EBD990 /* CollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAdapter.swift; sourceTree = "<group>"; };
+		940556D52900D58300EBD990 /* CollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAdapter.swift; sourceTree = "<group>"; };
 		940556D82900E1A800EBD990 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		940556DC2900E72E00EBD990 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		940556DE2900E81800EBD990 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				940556E82900EB4400EBD990 /* BaseCollectionViewController.swift */,
-				940556D52900D58300EBD990 /* CollectionAdapter.swift */,
+				940556D52900D58300EBD990 /* CollectionViewAdapter.swift */,
 				940556E32900EA6100EBD990 /* itemModelBase.swift */,
 				940556DB2900E71700EBD990 /* CollectionViewCells */,
 			);
@@ -536,7 +536,7 @@
 				940556D42900A03D00EBD990 /* CustomButton.swift in Sources */,
 				9405567B2900836E00EBD990 /* SceneDelegate.swift in Sources */,
 				940556CB290089E000EBD990 /* ImageModel.swift in Sources */,
-				940556D62900D58300EBD990 /* CollectionAdapter.swift in Sources */,
+				940556D62900D58300EBD990 /* CollectionViewAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

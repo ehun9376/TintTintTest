@@ -15,7 +15,7 @@ class BaseCollectionViewController: UIViewController {
         return view
     }()
     
-    var adapter: CollectionAdapter?
+    var adapter: CollectionViewAdapter?
     
     func creatLayout() -> UICollectionViewFlowLayout {
         

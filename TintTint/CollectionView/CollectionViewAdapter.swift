@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CollectionAdapter: NSObject {
+class CollectionViewAdapter: NSObject {
     
     weak var collectionView: UICollectionView?
     
@@ -42,7 +42,7 @@ class CollectionAdapter: NSObject {
     
 }
 
-extension CollectionAdapter: UICollectionViewDataSource {
+extension CollectionViewAdapter: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let itemModels = self.itemModels {
@@ -73,7 +73,7 @@ extension CollectionAdapter: UICollectionViewDataSource {
     
 }
 
-extension CollectionAdapter: UICollectionViewDelegateFlowLayout {
+extension CollectionViewAdapter: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -84,7 +84,7 @@ extension CollectionAdapter: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension CollectionAdapter:UICollectionViewDelegate {
+extension CollectionViewAdapter:UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let itemModel = self.itemModels?[indexPath.item] else { return }
         
