@@ -1,0 +1,6 @@
+framework module Pods_TintTint {
+  umbrella header "Pods-TintTint-umbrella.h"
+
+  export *
+  module * { export * }
+}

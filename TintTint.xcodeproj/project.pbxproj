@@ -3,19 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		940556792900836E00EBD990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556782900836E00EBD990 /* AppDelegate.swift */; };
 		9405567B2900836E00EBD990 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405567A2900836E00EBD990 /* SceneDelegate.swift */; };
-		9405567D2900836E00EBD990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405567C2900836E00EBD990 /* ViewController.swift */; };
-		940556802900836E00EBD990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9405567E2900836E00EBD990 /* Main.storyboard */; };
+		9405567D2900836E00EBD990 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405567C2900836E00EBD990 /* FirstViewController.swift */; };
 		940556822900836F00EBD990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 940556812900836F00EBD990 /* Assets.xcassets */; };
-		940556852900836F00EBD990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 940556832900836F00EBD990 /* LaunchScreen.storyboard */; };
 		940556902900836F00EBD990 /* TintTintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405568F2900836F00EBD990 /* TintTintTests.swift */; };
 		9405569A2900837000EBD990 /* TintTintUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556992900837000EBD990 /* TintTintUITests.swift */; };
 		9405569C2900837000EBD990 /* TintTintUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405569B2900837000EBD990 /* TintTintUITestsLaunchTests.swift */; };
+		940556CB290089E000EBD990 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556CA290089E000EBD990 /* ImageModel.swift */; };
+		940556CE29008BF000EBD990 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556CD29008BF000EBD990 /* APIService.swift */; };
+		940556D129008E5C00EBD990 /* JsonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D029008E5C00EBD990 /* JsonProtocol.swift */; };
+		940556D42900A03D00EBD990 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D32900A03D00EBD990 /* CustomButton.swift */; };
+		940556D62900D58300EBD990 /* CollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D52900D58300EBD990 /* CollectionAdapter.swift */; };
+		940556D92900E1A800EBD990 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556D82900E1A800EBD990 /* SecondViewController.swift */; };
+		940556DD2900E72E00EBD990 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556DC2900E72E00EBD990 /* ImageCell.swift */; };
+		940556DF2900E81800EBD990 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940556DE2900E81800EBD990 /* ImageCell.xib */; };
+		940556E42900EA6100EBD990 /* itemModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556E32900EA6100EBD990 /* itemModelBase.swift */; };
+		940556E92900EB4400EBD990 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556E82900EB4400EBD990 /* BaseCollectionViewController.swift */; };
+		94F24637A158B96C8A5936F4 /* Pods_TintTint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A8362BE384B1611E78B0EE /* Pods_TintTint.framework */; };
+		A9A413B7C9F49FF615F2D808 /* Pods_TintTintTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2472529662537530AF4330E3 /* Pods_TintTintTests.framework */; };
+		DE6CF31DA10FC4047D3F2DE3 /* Pods_TintTint_TintTintUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035A51FB93807936EC430C00 /* Pods_TintTint_TintTintUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,19 +47,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		035A51FB93807936EC430C00 /* Pods_TintTint_TintTintUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TintTint_TintTintUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2472529662537530AF4330E3 /* Pods_TintTintTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TintTintTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6A8572BABA1D3CC6949970 /* Pods-TintTintTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TintTintTests.debug.xcconfig"; path = "Target Support Files/Pods-TintTintTests/Pods-TintTintTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E273F2AE60C53DC8859A30C /* Pods-TintTint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TintTint.release.xcconfig"; path = "Target Support Files/Pods-TintTint/Pods-TintTint.release.xcconfig"; sourceTree = "<group>"; };
+		90B512DA1FF995EE41057611 /* Pods-TintTint-TintTintUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TintTint-TintTintUITests.debug.xcconfig"; path = "Target Support Files/Pods-TintTint-TintTintUITests/Pods-TintTint-TintTintUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		940556752900836E00EBD990 /* TintTint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TintTint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		940556782900836E00EBD990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9405567A2900836E00EBD990 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9405567C2900836E00EBD990 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9405567F2900836E00EBD990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9405567C2900836E00EBD990 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		940556812900836F00EBD990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		940556842900836F00EBD990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		940556862900836F00EBD990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9405568B2900836F00EBD990 /* TintTintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TintTintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9405568F2900836F00EBD990 /* TintTintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintTintTests.swift; sourceTree = "<group>"; };
 		940556952900837000EBD990 /* TintTintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TintTintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		940556992900837000EBD990 /* TintTintUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintTintUITests.swift; sourceTree = "<group>"; };
 		9405569B2900837000EBD990 /* TintTintUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintTintUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		940556CA290089E000EBD990 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		940556CD29008BF000EBD990 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		940556D029008E5C00EBD990 /* JsonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonProtocol.swift; sourceTree = "<group>"; };
+		940556D32900A03D00EBD990 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		940556D52900D58300EBD990 /* CollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAdapter.swift; sourceTree = "<group>"; };
+		940556D82900E1A800EBD990 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		940556DC2900E72E00EBD990 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		940556DE2900E81800EBD990 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		940556E32900EA6100EBD990 /* itemModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemModelBase.swift; sourceTree = "<group>"; };
+		940556E82900EB4400EBD990 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		B639EE4F879F3D2A48BC8003 /* Pods-TintTintTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TintTintTests.release.xcconfig"; path = "Target Support Files/Pods-TintTintTests/Pods-TintTintTests.release.xcconfig"; sourceTree = "<group>"; };
+		C9A8362BE384B1611E78B0EE /* Pods_TintTint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TintTint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F580D947625E6EB044C5D69D /* Pods-TintTint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TintTint.debug.xcconfig"; path = "Target Support Files/Pods-TintTint/Pods-TintTint.debug.xcconfig"; sourceTree = "<group>"; };
+		F828D6BE99DB6993400DA35E /* Pods-TintTint-TintTintUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TintTint-TintTintUITests.release.xcconfig"; path = "Target Support Files/Pods-TintTint-TintTintUITests/Pods-TintTint-TintTintUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F24637A158B96C8A5936F4 /* Pods_TintTint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A413B7C9F49FF615F2D808 /* Pods_TintTintTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +100,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6CF31DA10FC4047D3F2DE3 /* Pods_TintTint_TintTintUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E07042E3460F3B8E440755F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9A8362BE384B1611E78B0EE /* Pods_TintTint.framework */,
+				035A51FB93807936EC430C00 /* Pods_TintTint_TintTintUITests.framework */,
+				2472529662537530AF4330E3 /* Pods_TintTintTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9405566C2900836D00EBD990 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +124,8 @@
 				9405568E2900836F00EBD990 /* TintTintTests */,
 				940556982900837000EBD990 /* TintTintUITests */,
 				940556762900836E00EBD990 /* Products */,
+				BB40F813B00F0BB683C9DEE7 /* Pods */,
+				3E07042E3460F3B8E440755F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +144,13 @@
 			children = (
 				940556782900836E00EBD990 /* AppDelegate.swift */,
 				9405567A2900836E00EBD990 /* SceneDelegate.swift */,
-				9405567C2900836E00EBD990 /* ViewController.swift */,
-				9405567E2900836E00EBD990 /* Main.storyboard */,
+				940556E62900EAA200EBD990 /* Pages */,
+				940556E72900EAF100EBD990 /* CollectionView */,
+				940556D22900A02300EBD990 /* CustomView */,
+				940556E02900E9BE00EBD990 /* JsonProtocol */,
+				940556C9290089C500EBD990 /* Models */,
+				940556CC29008A6500EBD990 /* AF */,
 				940556812900836F00EBD990 /* Assets.xcassets */,
-				940556832900836F00EBD990 /* LaunchScreen.storyboard */,
 				940556862900836F00EBD990 /* Info.plist */,
 			);
 			path = TintTint;
@@ -127,6 +173,96 @@
 			path = TintTintUITests;
 			sourceTree = "<group>";
 		};
+		940556C9290089C500EBD990 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				940556CA290089E000EBD990 /* ImageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		940556CC29008A6500EBD990 /* AF */ = {
+			isa = PBXGroup;
+			children = (
+				940556CD29008BF000EBD990 /* APIService.swift */,
+			);
+			path = AF;
+			sourceTree = "<group>";
+		};
+		940556D22900A02300EBD990 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				940556D32900A03D00EBD990 /* CustomButton.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		940556DB2900E71700EBD990 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				940556DC2900E72E00EBD990 /* ImageCell.swift */,
+				940556DE2900E81800EBD990 /* ImageCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		940556E02900E9BE00EBD990 /* JsonProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				940556D029008E5C00EBD990 /* JsonProtocol.swift */,
+			);
+			name = JsonProtocol;
+			sourceTree = "<group>";
+		};
+		940556E62900EAA200EBD990 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				940556EB2900EDEA00EBD990 /* FirstVC */,
+				940556EA2900EBA900EBD990 /* SecondVC */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		940556E72900EAF100EBD990 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				940556E82900EB4400EBD990 /* BaseCollectionViewController.swift */,
+				940556D52900D58300EBD990 /* CollectionAdapter.swift */,
+				940556E32900EA6100EBD990 /* itemModelBase.swift */,
+				940556DB2900E71700EBD990 /* CollectionViewCells */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		940556EA2900EBA900EBD990 /* SecondVC */ = {
+			isa = PBXGroup;
+			children = (
+				940556D82900E1A800EBD990 /* SecondViewController.swift */,
+			);
+			path = SecondVC;
+			sourceTree = "<group>";
+		};
+		940556EB2900EDEA00EBD990 /* FirstVC */ = {
+			isa = PBXGroup;
+			children = (
+				9405567C2900836E00EBD990 /* FirstViewController.swift */,
+			);
+			path = FirstVC;
+			sourceTree = "<group>";
+		};
+		BB40F813B00F0BB683C9DEE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F580D947625E6EB044C5D69D /* Pods-TintTint.debug.xcconfig */,
+				6E273F2AE60C53DC8859A30C /* Pods-TintTint.release.xcconfig */,
+				90B512DA1FF995EE41057611 /* Pods-TintTint-TintTintUITests.debug.xcconfig */,
+				F828D6BE99DB6993400DA35E /* Pods-TintTint-TintTintUITests.release.xcconfig */,
+				2F6A8572BABA1D3CC6949970 /* Pods-TintTintTests.debug.xcconfig */,
+				B639EE4F879F3D2A48BC8003 /* Pods-TintTintTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9405569F2900837000EBD990 /* Build configuration list for PBXNativeTarget "TintTint" */;
 			buildPhases = (
+				7D95563CB3079B61607567A6 /* [CP] Check Pods Manifest.lock */,
 				940556712900836E00EBD990 /* Sources */,
 				940556722900836E00EBD990 /* Frameworks */,
 				940556732900836E00EBD990 /* Resources */,
+				9AC273972A10D847F83E4D8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 940556A22900837000EBD990 /* Build configuration list for PBXNativeTarget "TintTintTests" */;
 			buildPhases = (
+				6401F5C9F71A0BCEA8EB2A49 /* [CP] Check Pods Manifest.lock */,
 				940556872900836F00EBD990 /* Sources */,
 				940556882900836F00EBD990 /* Frameworks */,
 				940556892900836F00EBD990 /* Resources */,
@@ -169,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 940556A52900837000EBD990 /* Build configuration list for PBXNativeTarget "TintTintUITests" */;
 			buildPhases = (
+				B43290C297222552261C315F /* [CP] Check Pods Manifest.lock */,
 				940556912900837000EBD990 /* Sources */,
 				940556922900837000EBD990 /* Frameworks */,
 				940556932900837000EBD990 /* Resources */,
+				C4CAA920E5FBB70B61504578 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,7 +348,7 @@
 				};
 			};
 			buildConfigurationList = 940556702900836D00EBD990 /* Build configuration list for PBXProject "TintTint" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -231,9 +372,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				940556852900836F00EBD990 /* LaunchScreen.storyboard in Resources */,
 				940556822900836F00EBD990 /* Assets.xcassets in Resources */,
-				940556802900836E00EBD990 /* Main.storyboard in Resources */,
+				940556DF2900E81800EBD990 /* ImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +393,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6401F5C9F71A0BCEA8EB2A49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TintTintTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D95563CB3079B61607567A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TintTint-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AC273972A10D847F83E4D8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TintTint/Pods-TintTint-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TintTint/Pods-TintTint-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TintTint/Pods-TintTint-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B43290C297222552261C315F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TintTint-TintTintUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4CAA920E5FBB70B61504578 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TintTint-TintTintUITests/Pods-TintTint-TintTintUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TintTint-TintTintUITests/Pods-TintTint-TintTintUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TintTint-TintTintUITests/Pods-TintTint-TintTintUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		940556712900836E00EBD990 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9405567D2900836E00EBD990 /* ViewController.swift in Sources */,
+				9405567D2900836E00EBD990 /* FirstViewController.swift in Sources */,
+				940556CE29008BF000EBD990 /* APIService.swift in Sources */,
+				940556DD2900E72E00EBD990 /* ImageCell.swift in Sources */,
+				940556E92900EB4400EBD990 /* BaseCollectionViewController.swift in Sources */,
+				940556E42900EA6100EBD990 /* itemModelBase.swift in Sources */,
 				940556792900836E00EBD990 /* AppDelegate.swift in Sources */,
+				940556D92900E1A800EBD990 /* SecondViewController.swift in Sources */,
+				940556D129008E5C00EBD990 /* JsonProtocol.swift in Sources */,
+				940556D42900A03D00EBD990 /* CustomButton.swift in Sources */,
 				9405567B2900836E00EBD990 /* SceneDelegate.swift in Sources */,
+				940556CB290089E000EBD990 /* ImageModel.swift in Sources */,
+				940556D62900D58300EBD990 /* CollectionAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +547,6 @@
 			targetProxy = 940556962900837000EBD990 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9405567E2900836E00EBD990 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9405567F2900836E00EBD990 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		940556832900836F00EBD990 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				940556842900836F00EBD990 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9405569D2900837000EBD990 /* Debug */ = {
@@ -432,6 +665,7 @@
 		};
 		940556A02900837000EBD990 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F580D947625E6EB044C5D69D /* Pods-TintTint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -442,7 +676,7 @@
 				INFOPLIST_FILE = TintTint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -460,6 +694,7 @@
 		};
 		940556A12900837000EBD990 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E273F2AE60C53DC8859A30C /* Pods-TintTint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -470,7 +705,7 @@
 				INFOPLIST_FILE = TintTint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,6 +723,7 @@
 		};
 		940556A32900837000EBD990 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F6A8572BABA1D3CC6949970 /* Pods-TintTintTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +744,7 @@
 		};
 		940556A42900837000EBD990 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B639EE4F879F3D2A48BC8003 /* Pods-TintTintTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +765,7 @@
 		};
 		940556A62900837000EBD990 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90B512DA1FF995EE41057611 /* Pods-TintTint-TintTintUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +784,7 @@
 		};
 		940556A72900837000EBD990 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F828D6BE99DB6993400DA35E /* Pods-TintTint-TintTintUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

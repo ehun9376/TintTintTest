@@ -13,12 +13,17 @@ class CollectionAdapter: NSObject {
     weak var collectionView: UICollectionView?
     
     var itemModels: [CollectionItemModel]? = []
-    
+        
     init(collectionView: UICollectionView) {
+        super.init()
         self.collectionView = collectionView
+        self.collectionView?.delegate = self
+        self.collectionView?.dataSource = self
+        
     }
     
     func updateData(itemModels:[CollectionItemModel]){
+        self.itemModels = itemModels
         self.collectionView?.reloadData()
     }
     
@@ -36,6 +41,8 @@ extension CollectionAdapter: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let itemModel = self.itemModels?[indexPath.item] else { return UICollectionViewCell() }
+        itemModel.indexPath = indexPath
+        itemModel.collectionView = collectionView
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: itemModel.getCellID(), for: indexPath)
         
@@ -63,7 +70,7 @@ extension CollectionAdapter:UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let itemModel = self.itemModels?[indexPath.item] else { return }
         
-        if let action = itemModel.itemDidSelectAction {
+        if let action = itemModel.cellDidPressed {
             action(itemModel)
         }
     }

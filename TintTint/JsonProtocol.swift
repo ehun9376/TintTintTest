@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+public protocol JsonModel {
+    init(json:[String:Any])
+}
+

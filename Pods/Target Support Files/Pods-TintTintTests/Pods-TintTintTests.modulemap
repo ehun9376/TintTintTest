@@ -1,0 +1,6 @@
+framework module Pods_TintTintTests {
+  umbrella header "Pods-TintTintTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
