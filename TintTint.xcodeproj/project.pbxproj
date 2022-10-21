@@ -25,6 +25,7 @@
 		940556E42900EA6100EBD990 /* itemModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556E32900EA6100EBD990 /* itemModelBase.swift */; };
 		940556E92900EB4400EBD990 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556E82900EB4400EBD990 /* BaseCollectionViewController.swift */; };
 		940556EE29023DBC00EBD990 /* TempDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556ED29023DBC00EBD990 /* TempDataCenter.swift */; };
+		940556F1290261C700EBD990 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940556F0290261C700EBD990 /* Extension.swift */; };
 		94F24637A158B96C8A5936F4 /* Pods_TintTint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A8362BE384B1611E78B0EE /* Pods_TintTint.framework */; };
 		A9A413B7C9F49FF615F2D808 /* Pods_TintTintTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2472529662537530AF4330E3 /* Pods_TintTintTests.framework */; };
 		DE6CF31DA10FC4047D3F2DE3 /* Pods_TintTint_TintTintUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035A51FB93807936EC430C00 /* Pods_TintTint_TintTintUITests.framework */; };
@@ -75,6 +76,7 @@
 		940556E32900EA6100EBD990 /* itemModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemModelBase.swift; sourceTree = "<group>"; };
 		940556E82900EB4400EBD990 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		940556ED29023DBC00EBD990 /* TempDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDataCenter.swift; sourceTree = "<group>"; };
+		940556F0290261C700EBD990 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		B639EE4F879F3D2A48BC8003 /* Pods-TintTintTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TintTintTests.release.xcconfig"; path = "Target Support Files/Pods-TintTintTests/Pods-TintTintTests.release.xcconfig"; sourceTree = "<group>"; };
 		C9A8362BE384B1611E78B0EE /* Pods_TintTint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TintTint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F580D947625E6EB044C5D69D /* Pods-TintTint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TintTint.debug.xcconfig"; path = "Target Support Files/Pods-TintTint/Pods-TintTint.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				940556782900836E00EBD990 /* AppDelegate.swift */,
 				9405567A2900836E00EBD990 /* SceneDelegate.swift */,
+				940556EF290261BA00EBD990 /* Extension */,
 				940556EC29023DA500EBD990 /* DataCenter */,
 				940556E62900EAA200EBD990 /* Pages */,
 				940556E72900EAF100EBD990 /* CollectionView */,
@@ -259,6 +262,14 @@
 				940556ED29023DBC00EBD990 /* TempDataCenter.swift */,
 			);
 			path = DataCenter;
+			sourceTree = "<group>";
+		};
+		940556EF290261BA00EBD990 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				940556F0290261C700EBD990 /* Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		BB40F813B00F0BB683C9DEE7 /* Pods */ = {
@@ -521,6 +532,7 @@
 				940556EE29023DBC00EBD990 /* TempDataCenter.swift in Sources */,
 				940556D92900E1A800EBD990 /* SecondViewController.swift in Sources */,
 				940556D129008E5C00EBD990 /* JsonProtocol.swift in Sources */,
+				940556F1290261C700EBD990 /* Extension.swift in Sources */,
 				940556D42900A03D00EBD990 /* CustomButton.swift in Sources */,
 				9405567B2900836E00EBD990 /* SceneDelegate.swift in Sources */,
 				940556CB290089E000EBD990 /* ImageModel.swift in Sources */,
