@@ -12,7 +12,13 @@ class CollectionAdapter: NSObject {
     
     weak var collectionView: UICollectionView?
     
+    var page: Int = 0
+    
+    var needKeepLoading: Bool = true
+    
     var itemModels: [CollectionItemModel]? = []
+    
+    var lastCellDidDisplay: ((Int) -> ())?
         
     init(collectionView: UICollectionView) {
         super.init()
@@ -25,6 +31,13 @@ class CollectionAdapter: NSObject {
     func updateData(itemModels:[CollectionItemModel]){
         self.itemModels = itemModels
         self.collectionView?.reloadData()
+    }
+    
+    func insertItemAtLast(itemModels:[CollectionItemModel]){
+        self.itemModels?.append(contentsOf: itemModels)
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
     
 }
@@ -48,6 +61,11 @@ extension CollectionAdapter: UICollectionViewDataSource {
         
         if let cell = cell as? CellBinding {
             cell.setupCellView(model: itemModel)
+        }
+        
+        if needKeepLoading,indexPath.item + 1 == self.itemModels?.count ,let lastCellDidDisplay = lastCellDidDisplay {
+            self.page += 1
+            lastCellDidDisplay(self.page)
         }
         
         return cell

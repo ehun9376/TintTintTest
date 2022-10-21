@@ -28,11 +28,15 @@ class BaseCollectionViewController: UIViewController {
         return layout
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(collectionView)
         self.adapter = .init(collectionView: self.collectionView)
+        self.adapter?.lastCellDidDisplay = { page in
+            self.lastCellWillDisplay(page: page)
+        }
     }
+    
+    func lastCellWillDisplay(page:Int){ }
+    
 }

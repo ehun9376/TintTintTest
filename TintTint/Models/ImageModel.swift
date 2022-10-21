@@ -18,6 +18,7 @@ class ImageListModel: JsonModel {
             })
         }
     }
+
 }
 
 class ImageModel: JsonModel {
