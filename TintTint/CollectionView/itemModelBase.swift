@@ -12,7 +12,7 @@ protocol CellModel {
     func getCellID() -> String
 }
 protocol CellBinding{
-    func setupCellView(model:CellModel)
+    func setupCellView(model: CellModel)
 }
 
 class CollectionItemModel: CellModel {

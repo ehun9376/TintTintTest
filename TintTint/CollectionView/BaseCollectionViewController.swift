@@ -10,12 +10,18 @@ import UIKit
 
 class BaseCollectionViewController: UIViewController {
     
-    lazy var collectionView: UICollectionView =  {
+    lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: self.view.bounds, collectionViewLayout: creatLayout())
         return view
     }()
     
     var adapter: CollectionViewAdapter?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(collectionView)
+        self.setupAdapter()
+    }
     
     func creatLayout() -> UICollectionViewFlowLayout {
         
@@ -28,11 +34,10 @@ class BaseCollectionViewController: UIViewController {
         return layout
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.addSubview(collectionView)
+    func setupAdapter() {
         self.adapter = .init(collectionView: self.collectionView)
-        self.adapter?.lastCellDidDisplay = { page in
+        self.adapter?.lastCellDidDisplay = { [weak self] page in
+            guard let self = self else { return }
             self.lastCellWillDisplay(page: page)
         }
     }

@@ -17,10 +17,12 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        setupCenterButton()
+        
+        self.setupCenterButton()
     }
     
-    func setupCenterButton(){
+    func setupCenterButton() {
+        
         let rxButton = CustomButton(title: "ReusetAPI", titleColor: .blue)
         
         rxButton.rx.tap
@@ -29,6 +31,7 @@ class FirstViewController: UIViewController {
                 self?.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: disposed)
+        
         self.view.addSubview(rxButton)
         rxButton.translatesAutoresizingMaskIntoConstraints = false
         rxButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true

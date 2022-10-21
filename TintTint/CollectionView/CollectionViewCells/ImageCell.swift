@@ -20,7 +20,7 @@ class ImageCellItemModel: CollectionItemModel {
     
     var image: UIImage?
     
-    var cellWillDisplay: (()->())?
+    var cellWillDisplay: (() -> ())?
     
     init(
         id: String? = nil,

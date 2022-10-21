@@ -25,19 +25,23 @@ class CollectionViewAdapter: NSObject {
         self.collectionView = collectionView
         self.collectionView?.delegate = self
         self.collectionView?.dataSource = self
-        
     }
     
-    func updateData(itemModels:[CollectionItemModel]){
+    func updateData(itemModels: [CollectionItemModel]) {
+        
         self.itemModels = itemModels
+        
         self.collectionView?.reloadData()
     }
     
-    func insertItemAtLast(itemModels:[CollectionItemModel]){
+    func insertItemAtLast(itemModels: [CollectionItemModel]) {
+        
         self.itemModels?.append(contentsOf: itemModels)
+        
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
         }
+        
     }
     
 }
@@ -45,15 +49,19 @@ class CollectionViewAdapter: NSObject {
 extension CollectionViewAdapter: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if let itemModels = self.itemModels {
             return itemModels.count
         } else {
             return 0
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let itemModel = self.itemModels?[indexPath.item] else { return UICollectionViewCell() }
+        
         itemModel.indexPath = indexPath
         itemModel.collectionView = collectionView
         
@@ -63,12 +71,13 @@ extension CollectionViewAdapter: UICollectionViewDataSource {
             cell.setupCellView(model: itemModel)
         }
         
-        if needKeepLoading,indexPath.item + 1 == self.itemModels?.count ,let lastCellDidDisplay = lastCellDidDisplay {
+        if needKeepLoading, indexPath.item + 1 == self.itemModels?.count, let lastCellDidDisplay = lastCellDidDisplay {
             self.page += 1
             lastCellDidDisplay(self.page)
         }
         
         return cell
+        
     }
     
 }
@@ -86,10 +95,12 @@ extension CollectionViewAdapter: UICollectionViewDelegateFlowLayout {
 
 extension CollectionViewAdapter:UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         guard let itemModel = self.itemModels?[indexPath.item] else { return }
         
         if let action = itemModel.cellDidPressed {
             action(itemModel)
         }
+        
     }
 }
