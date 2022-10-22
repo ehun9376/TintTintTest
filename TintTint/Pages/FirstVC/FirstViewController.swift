@@ -23,19 +23,36 @@ class FirstViewController: UIViewController {
     
     func setupCenterButton() {
         
-        let rxButton = CustomButton(title: "ReusetAPI", titleColor: .blue)
         
-        rxButton.rx.tap
+        
+        let goToRxButton = CustomButton(title: "ReusetAPI(RxSecondView)", titleColor: .blue)
+        
+        let goToSecondVCButton = CustomButton(title: "ReusetAPI(SecondView)", titleColor: .blue)
+        
+        goToRxButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                let rxVC = RxSecondViewController()
+                self?.navigationController?.pushViewController(rxVC, animated: true)
+            })
+            .disposed(by: disposed)
+        
+        goToSecondVCButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 let vc = SecondViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: disposed)
         
-        self.view.addSubview(rxButton)
-        rxButton.translatesAutoresizingMaskIntoConstraints = false
-        rxButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        rxButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        self.view.addSubview(goToRxButton)
+        goToRxButton.translatesAutoresizingMaskIntoConstraints = false
+        goToRxButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        goToRxButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
+        self.view.addSubview(goToSecondVCButton)
+        goToSecondVCButton.translatesAutoresizingMaskIntoConstraints = false
+        goToSecondVCButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        goToSecondVCButton.topAnchor.constraint(equalTo: goToRxButton.bottomAnchor, constant: 20.0).isActive = true
+
 
     }
 
