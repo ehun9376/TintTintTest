@@ -23,7 +23,7 @@ class TempDataCenter: NSObject {
         return false
     }
     
-    private func getPageImageModels(page: Int) -> [ImageModel] {
+     func getPageImageModels(page: Int) -> [ImageModel] {
         
         let start =  page * 20
         
