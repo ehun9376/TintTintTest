@@ -27,10 +27,14 @@ class RxSecondViewController: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(collectionView)
         self.regisCell()
-        
         self.setupCellBinding()
-        self.reloadData()
-//        self.viewModel.downloadList()
+        self.setitemModelsBinding()
+        self.viewModel.downloadList()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        TempDataCenter.shared.removeAllModel()
     }
     
     func creatLayout() -> UICollectionViewFlowLayout {
@@ -49,7 +53,7 @@ class RxSecondViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
     }
     
-    func reloadData() {
+    func setitemModelsBinding() {
         viewModel.itemModels
             .asDriver(onErrorJustReturn: [])
             .drive(self.collectionView.rx.items(cellIdentifier: "ImageCell", cellType: ImageCell.self)) { item, imageModel, cell in
@@ -70,7 +74,7 @@ class RxSecondViewController: UIViewController {
                 
                 let page = (try? self.viewModel.page.value()) ?? 0
                 
-                if indexPath.item == count - 1, self.viewModel.hasMore {
+                if indexPath.item == count - 1, TempDataCenter.shared.hasMore {
                     self.viewModel.page.onNext(page + 1)
                 }
             }.disposed(by: self.disposeBag)

@@ -17,13 +17,9 @@ class RxSecondViewModel {
     
     let itemModels : PublishSubject<[ImageModel]> = .init()
     
-    var hasMore: Bool {
-        TempDataCenter.shared.hasMore
-    }
     
     init() {
         setupPageBinding()
-        downloadList()
     }
     
     func downloadList(){
@@ -31,7 +27,20 @@ class RxSecondViewModel {
                                                 modelType: ImageListModel.self,
                                                 handler: { [weak self] listModel in
             guard let self = self else { return }
-            TempDataCenter.shared.imageListModel = listModel
+//
+//            let templistModel = listModel
+//
+//            var tempimageModel: [ImageModel] = []
+//
+//            for (index,model) in listModel.imageModels.enumerated() {
+//                if index < 200 {
+//                    tempimageModel.append(model)
+//                }
+//
+//            }
+//            templistModel.imageModels = tempimageModel
+            
+            TempDataCenter.shared.setImageListModel(listModel: listModel)
             self.page.onNext(0)
         })
     }

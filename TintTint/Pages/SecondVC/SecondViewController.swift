@@ -15,14 +15,33 @@ class SecondViewController: BaseCollectionViewController {
         self.regisCell()
         self.downloadList()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        TempDataCenter.shared.removeAllModel()
+    }
 
     func downloadList(){
         AFAPIService.shared.downloadJsonWithUrl(url: "https://jsonplaceholder.typicode.com/photos",
                                                 modelType: ImageListModel.self,
                                                 handler: { [weak self] listModel in
             guard let self = self else { return }
-            TempDataCenter.shared.imageListModel = listModel
-            self.insertItemsAtLast(models: TempDataCenter.shared.getPageImageModels(page: self.adapter?.page ?? 0))
+//
+//            let templistModel = listModel
+//
+//            var tempimageModel: [ImageModel] = []
+//
+//            for (index,model) in listModel.imageModels.enumerated() {
+//                if index < 200 {
+//                    tempimageModel.append(model)
+//                }
+//
+//            }
+//            templistModel.imageModels = tempimageModel
+            
+            TempDataCenter.shared.setImageListModel(listModel: listModel)
+            
+            self.setupAllItems(models: TempDataCenter.shared.getPageModels(page: self.adapter?.page ?? 0))
         })
     }
 
@@ -40,15 +59,6 @@ class SecondViewController: BaseCollectionViewController {
                                                     title: imageModel.title,
                                                     imageUrl: imageModel.urlStr,
                                                     itemSize: .init(width: self.collectionView.bounds.width / 4, height: self.collectionView.bounds.width / 4))
-
-//        imageCellItemModel.cellWillDisplay = {
-//            AFAPIService.shared.downloadImageWithUrl(url: imageModel.urlStr ?? "") { image in
-//                DispatchQueue.main.async {
-//                    imageCellItemModel.image = image
-//                    imageCellItemModel.updateCellView()
-//                }
-//            }
-//        }
         return imageCellItemModel
     }
 
@@ -57,16 +67,14 @@ class SecondViewController: BaseCollectionViewController {
     }
 
     override func lastCellWillDisplay(page: Int) {
-        let needKeep = self.adapter?.needKeepLoading ?? true
-        if needKeep {
-            let models = TempDataCenter.shared.getPageImageModels(page: page)
-            if !(models.count < 20) {
-                self.insertItemsAtLast(models: models)
-            } else {
-                self.insertItemsAtLast(models: models)
-                self.adapter?.needKeepLoading = false
-            }
+        if TempDataCenter.shared.hasMore {
+            self.adapter?.needKeepLoading = TempDataCenter.shared.hasMore
+            let models = TempDataCenter.shared.getPageModels(page: page)
+            self.setupAllItems(models: models)
+        } else {
+            self.adapter?.needKeepLoading = TempDataCenter.shared.hasMore
         }
+
     }
 
 }

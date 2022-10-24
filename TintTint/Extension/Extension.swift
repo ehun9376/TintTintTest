@@ -24,7 +24,7 @@ public extension UIImageView {
         DispatchQueue.global(qos: .userInitiated).async {
             if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
-                    self.transition(toImage: image)
+                    self.image = image
                 }
             } else {
                 
@@ -33,7 +33,7 @@ public extension UIImageView {
                         let cachedData = CachedURLResponse(response: response, data: data)
                         cache.storeCachedResponse(cachedData, for: request)
                         DispatchQueue.main.async {
-                            self.transition(toImage: image)
+                            self.image = image
                         }
                     }
                 }).resume()

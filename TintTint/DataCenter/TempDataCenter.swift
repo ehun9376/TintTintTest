@@ -12,7 +12,7 @@ class TempDataCenter: NSObject {
     
     static let shared = TempDataCenter()
     
-    var imageListModel: ImageListModel?
+    private var imageListModel: ImageListModel?
     
     private var models: [ImageModel] = []
     
@@ -47,6 +47,15 @@ class TempDataCenter: NSObject {
     func getPageModels(page:Int) -> [ImageModel] {
         models = models + getPageImageModels(page: page)
         return models
+    }
+    
+    func removeAllModel() {
+        self.models.removeAll()
+        self.imageListModel = nil
+    }
+    
+    func setImageListModel(listModel:ImageListModel){
+        self.imageListModel = listModel
     }
 
 }
