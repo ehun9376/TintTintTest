@@ -53,9 +53,10 @@ class RxSecondViewController: UIViewController {
         viewModel.itemModels
             .asDriver(onErrorJustReturn: [])
             .drive(self.collectionView.rx.items(cellIdentifier: "ImageCell", cellType: ImageCell.self)) { item, imageModel, cell in
-                cell.titleLabel.text = imageModel.title
-                cell.idLabel.text = String(imageModel.id ?? 0)
-                cell.backImageView.loadImage(fromURL: imageModel.urlStr ?? "")
+                cell.rxItemModel = .init(id: String(imageModel.id ?? 0),
+                                               title: imageModel.title,
+                                               imageUrl: imageModel.urlStr,
+                                               itemSize: .init(width: self.view.bounds.width / 2, height: self.view.bounds.width / 2))
             }.disposed(by: self.disposeBag)
     }
 
