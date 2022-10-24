@@ -6,14 +6,24 @@
 //
 
 import Foundation
+import RxSwift
 
 class TempDataCenter: NSObject {
-        
+    
     static let shared = TempDataCenter()
     
     var imageListModel: ImageListModel?
-        
-    func getPageImageModels(page: Int) -> [ImageModel] {
+    
+    private var models: [ImageModel] = []
+    
+    var hasMore: Bool {
+        if let images = imageListModel?.imageModels {
+            return models.count < images.count
+        }
+        return false
+    }
+    
+    private func getPageImageModels(page: Int) -> [ImageModel] {
         
         let start =  page * 20
         
@@ -31,9 +41,14 @@ class TempDataCenter: NSObject {
             }
         }
         return models
-        
     }
+
     
+    func getPageModels(page:Int) -> [ImageModel] {
+        models = models + getPageImageModels(page: page)
+        return models
+    }
+
 }
 
 

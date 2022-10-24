@@ -13,9 +13,18 @@ class RxSecondViewModel {
     
     let disposed = DisposeBag()
     
-//    var page = PublishSubject<Int>()
+    var page = BehaviorSubject<Int>(value: 0)
     
-    var itemModels = PublishSubject<[ImageModel]>()
+    let itemModels : PublishSubject<[ImageModel]> = .init()
+    
+    var hasMore: Bool {
+        TempDataCenter.shared.hasMore
+    }
+    
+    init() {
+        setupPageBinding()
+        downloadList()
+    }
     
     func downloadList(){
         AFAPIService.shared.downloadJsonWithUrl(url: "https://jsonplaceholder.typicode.com/photos",
@@ -23,19 +32,16 @@ class RxSecondViewModel {
                                                 handler: { [weak self] listModel in
             guard let self = self else { return }
             TempDataCenter.shared.imageListModel = listModel
-            self.itemModels.onNext(TempDataCenter.shared.imageListModel?.imageModels ?? [])
-//            self.page.onNext(0)
+            self.page.onNext(0)
         })
     }
     
-//    func setupPageBinding(){
-//
-//        page.subscribe(onNext: { page in
-//            self.itemModels?.onNext(TempDataCenter.shared.getPageImageModels(page: page))
-//        }).disposed(by: disposed)
-//    }
-//
-//    init() {
-//        setupPageBinding()
-//    }
+    
+    func setupPageBinding(){
+        page
+            .bind(onNext: { page in
+                self.itemModels.onNext(TempDataCenter.shared.getPageModels(page: page))
+            })
+            .disposed(by: disposed)
+    }
 }
