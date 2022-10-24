@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ImageCellItemModel: CollectionItemModel {
     
@@ -17,24 +19,21 @@ class ImageCellItemModel: CollectionItemModel {
     var id: String?
     
     var title: String?
-    
-    var image: UIImage?
-    
-    var cellWillDisplay: (() -> ())?
-    
+        
+    var imageUrl: String?
+        
     init(
         id: String? = nil,
         title: String? = nil,
-        image: UIImage? = nil,
+        imageUrl: String? = nil,
         itemSize: CGSize? = nil,
-        cellWillDisplay: (()->())? = nil,
         cellDidPressed: ((CollectionItemModel?) -> ())? = nil
     ) {
         super.init()
         self.id = id
         self.title = title
+        self.imageUrl = imageUrl
         self.itemSize = itemSize
-        self.cellWillDisplay = cellWillDisplay
         self.cellDidPressed = cellDidPressed
     }
 }
@@ -49,6 +48,14 @@ class ImageCell: UICollectionViewCell {
     
     @IBOutlet weak var backImageView: UIImageView!
     
+    var rxItemModel: ImageCellItemModel? {
+        didSet {
+            self.titleLabel.text = rxItemModel?.title
+            self.idLabel.text = rxItemModel?.id
+            self.backImageView.loadImage(fromURL: rxItemModel?.imageUrl ?? "")
+        }
+    }
+        
     override func awakeFromNib() {
         self.labelStackView.spacing = 10
         self.labelStackView.distribution = .fillEqually
@@ -62,7 +69,9 @@ class ImageCell: UICollectionViewCell {
         self.idLabel.numberOfLines = 2
         self.idLabel.lineBreakMode = .byTruncatingTail
         self.idLabel.textAlignment = .center
+        
     }
+
 }
 
 extension ImageCell: CellBinding {
@@ -73,13 +82,7 @@ extension ImageCell: CellBinding {
         
         self.idLabel.text = itemModel.id
         
-        if let image = itemModel.image {
-            self.backImageView.image = image
-        } else {
-            if let cellWillDisplay = itemModel.cellWillDisplay {
-                cellWillDisplay()
-            }
-        }
+        self.backImageView.loadImage(fromURL: itemModel.imageUrl ?? "")
 
     }
 }

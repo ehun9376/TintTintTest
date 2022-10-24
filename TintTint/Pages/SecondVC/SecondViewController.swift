@@ -38,16 +38,17 @@ class SecondViewController: BaseCollectionViewController {
     func creatImageCellItemModel(imageModel: ImageModel) -> ImageCellItemModel {
         let imageCellItemModel = ImageCellItemModel(id: String(imageModel.id ?? 0),
                                                     title: imageModel.title,
+                                                    imageUrl: imageModel.urlStr,
                                                     itemSize: .init(width: self.collectionView.bounds.width / 4, height: self.collectionView.bounds.width / 4))
 
-        imageCellItemModel.cellWillDisplay = {
-            AFAPIService.shared.downloadImageWithUrl(url: imageModel.urlStr ?? "") { image in
-                DispatchQueue.main.async {
-                    imageCellItemModel.image = image
-                    imageCellItemModel.updateCellView()
-                }
-            }
-        }
+//        imageCellItemModel.cellWillDisplay = {
+//            AFAPIService.shared.downloadImageWithUrl(url: imageModel.urlStr ?? "") { image in
+//                DispatchQueue.main.async {
+//                    imageCellItemModel.image = image
+//                    imageCellItemModel.updateCellView()
+//                }
+//            }
+//        }
         return imageCellItemModel
     }
 
