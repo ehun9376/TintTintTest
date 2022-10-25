@@ -16,11 +16,6 @@ class SecondViewController: BaseCollectionViewController {
         self.downloadList()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        TempDataCenter.shared.removeAllModel()
-    }
-
     func downloadList(){
         AFAPIService.shared.downloadJsonWithUrl(url: "https://jsonplaceholder.typicode.com/photos",
                                                 modelType: ImageListModel.self,
@@ -45,7 +40,6 @@ class SecondViewController: BaseCollectionViewController {
         })
     }
 
-    //要分頁讀取所以用不到
     func setupAllItems(models: [ImageModel]) {
         self.adapter?.updateData(itemModels: models.map({self.creatImageCellItemModel(imageModel:$0)}))
     }
@@ -67,12 +61,9 @@ class SecondViewController: BaseCollectionViewController {
     }
 
     override func lastCellWillDisplay(page: Int) {
-        if TempDataCenter.shared.hasMore {
-            self.adapter?.needKeepLoading = TempDataCenter.shared.hasMore
-            let models = TempDataCenter.shared.getPageModels(page: page)
-            self.setupAllItems(models: models)
-        } else {
-            self.adapter?.needKeepLoading = TempDataCenter.shared.hasMore
+        self.adapter?.needKeepLoading = TempDataCenter.shared.hasMore
+        if (self.adapter?.needKeepLoading ?? true) {
+            self.setupAllItems(models: TempDataCenter.shared.getPageModels(page: page))
         }
 
     }

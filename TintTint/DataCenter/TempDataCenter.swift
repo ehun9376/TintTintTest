@@ -12,7 +12,11 @@ class TempDataCenter: NSObject {
     
     static let shared = TempDataCenter()
     
-    private var imageListModel: ImageListModel?
+    private var imageListModel: ImageListModel? {
+        didSet {
+            models.removeAll()
+        }
+    }
     
     private var models: [ImageModel] = []
     

@@ -32,11 +32,6 @@ class RxSecondViewController: UIViewController {
         self.viewModel.downloadList()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        TempDataCenter.shared.removeAllModel()
-    }
-    
     func creatLayout() -> UICollectionViewFlowLayout {
         
         let layout = UICollectionViewFlowLayout()
